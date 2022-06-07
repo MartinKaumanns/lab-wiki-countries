@@ -21,16 +21,17 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={<CountriesList countries={countries} />}
-        ></Route>
-        <Route
-          path="/country/:id"
-          element={<CountryDetails countries={countries} />}
-        ></Route>
-      </Routes>
+      <div className="container">
+        <div className="row">
+          <CountriesList countries={countries} />
+          <Routes>
+            <Route
+              path="/:id"
+              element={<CountryDetails countries={countries} />}
+            />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
